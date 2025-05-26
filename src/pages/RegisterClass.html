@@ -4,31 +4,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro de Aula</title>
+    <title>Cadastro de Matérias</title>
     <link rel="stylesheet" href="../styles/indexStyle.css">
+    <link rel="stylesheet" href="../styles/Register.css">
 </head>
 
 <body>
     <nav>
         <div><img src="" alt="Logo Site" class="logo"></div>
         <div class="navOptions">
-            <a href="/SeparaAulasProject/src/pages/AlignClass.html">
+            <a href="/src/pages/AlignClass.html">
                 <button>
                     <h1>Separar Aulas</h1>
                 </button>
             </a>
-            <a href="/SeparaAulasProject/src/pages/RegisterClass.html">
+            <a href="/src/pages/RegisterClass.html">
                 <button>
                     <h1>Cadastrar Matérias</h1>
                 </button>
             </a>
-            <a href="/SeparaAulasProject/src/pages/RegisterTeacher.html">
+            <a href="/src/pages/RegisterTeacher.html">
                 <button>
                     <h1>Cadastrar Professores</h1>
                 </button>
             </a>
         </div>
     </nav>
+
+    <main>
+        <div class="contentTeacher">
+            <h1>Cadastro de Matérias</h1>
+            <form action="/cadastrarProfessor" method="POST">
+                <div>
+                    <div>
+                        <label for="nome">Nome</label>
+                        <input type="text" id="nome" name="nome" required>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <label for="text">Objetivo da Matéria</label>
+                        <textarea rows="4" cols="50" class="resizable-input"
+                            placeholder="Digite algo aqui..."></textarea>
+
+
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <!--ComboBox terá seus valores retornado do RegisterTeacherController.js-->
+                        <label for="materia">Materia</label>
+                        <select name="materia" id="classComboBox"></select>
+
+                    </div>
+                </div>
+
+                <button type="submit">Cadastrar</button>
+            </form>
+
+        </div>
+    </main>
+    <script src="../scripts/RegisterTeacherController.js"></script>
 </body>
 
 </html>
